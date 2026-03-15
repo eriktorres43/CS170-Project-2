@@ -41,7 +41,7 @@ For Nearest Neighbor Classification in a visual sense, the data is separated int
 
  ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure1.png?raw=true)
                
-This algorithm uses Euclidean Distance on feature data to determine an unknown instance’s nearest neighbor and classifies the instance with the same class type as the nearest neighbor. Then, we compare the classified class type to the actual class and see how many classifications were correctly classified, and then we divide by the number of instances in our dataset (K-fold Cross Validation) to measure accuracy, where K is the number of rows in the dataset. But, we know that “The nearest neighbor algorithm is sensitive to irrelevant features…” [3], so we use the searches to find the features that maximize accuracy.
+This algorithm typically uses Euclidean Distance on feature data to determine an unknown instance’s nearest neighbor and classifies the instance with the same class type as its nearest neighbor. Then, we compare the classified class type to the actual class and see how many classifications were correctly classified, and then we divide by the number of instances in our dataset (K-fold Cross Validation) to measure accuracy, where K is the number of rows in the dataset. But, we know that “The nearest neighbor algorithm is sensitive to irrelevant features…” [3], so we use the searches to find the features that maximize accuracy. 
 
 [2] 6__MachineLearning001 (Eammon Keogh, 2026, UCR, Slides/Dropbox Pg.66)
 
