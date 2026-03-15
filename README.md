@@ -92,7 +92,7 @@ Of course, accuracy is the most important factor when choosing which algorithm t
 
  ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Table1.png?raw=true)
 
-Based on this data, we can see that not surprisingly, the small dataset ran faster than the large dataset, given its smaller number of features (16 compared to 64) and instances (500 compared to 3000). Additionally, we can see that Forward Selection was not only better in terms of accuracy, but also in terms of runtime, doing roughly 1.62 and 1.86 times better than Backward Elimination. Which could be caused by Forward Selection searching for all features with smaller feature subsets compared to Backward Elimination. 
+Based on this data, we can see that not surprisingly, the small dataset ran faster than the large dataset, given its smaller number of features (16 compared to 64) and instances (500 compared to 3000). Additionally, we can see that Forward Selection was not only better in terms of accuracy, but also in terms of runtime, doing roughly 1.62 and 1.86 times better than Backward Elimination. This could be caused by Forward Selection searching for all features with smaller feature subsets compared to Backward Elimination. 
 
 # **Conclusion:**
 
@@ -102,7 +102,7 @@ Therefore, when attempting to solve this problem again, whether that be for this
 
 # **Examples:**
 
-The next two pages contain examples of the output of running Small Dataset Backward Elimination and Large Dataset Forward Selection.
+The next two pages contain examples of the output of running Small Dataset Forward Selection and Small Dataset Backward Elimination.
 
 This is the example and output of Small Dataset Forward Selection:
 
