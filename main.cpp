@@ -32,9 +32,6 @@ int main() {
         cin >> choice;
     }
 
-    // Unlike Matlab, we cannot determine the end of a row easily, so we initiate the columns to include class type and features from the start
-    // Also here, given we have two specific dataset, we just hardcode both file names
-
     if(choice == 1) { 
         data_option = "CS170_Small_DataSet__51.txt";
     } else if (choice == 2) {
@@ -52,7 +49,7 @@ int main() {
         return 0;
     }
 
-    // This is used to determine how many columns there are to separate the instances per row
+    // Unlike Matlab, we cannot determine the end of a row easily, so we can determine how many columns there are by character 'e'
 
     string line;
     int count = 0;
