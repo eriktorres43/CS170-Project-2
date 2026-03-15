@@ -62,7 +62,7 @@ In Figure 3, we see the results of running Backward Elimination on CS170_Small_D
  
  ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure3.png?raw=true)
 
-Before beginning to search, we first start with all features, whose accuracy is the same as that of Forward Selection, 77.2%. As we begin removing features one by one, we can see that removing 3 features (4th bar) reaches the highest accuracy, ignoring no features ({}), but the increase isn’t significant and slowly decreases past this point. Since this increase wasn’t significant, this could indicate that none of these features are useful, which is explained by the highest accuracy being the default rate. However, if features are needed, which the code does, the best feature set is {1,2,3,4,5,6,7,9,11,12,13,14,15}. 
+Before beginning to search, we first start with all features, whose accuracy is the same as that of Forward Selection, 77.2%. As we begin removing features one by one, we can see that removing 3 features (4th bar) reaches the highest accuracy, ignoring no features ({}), but the increase isn’t significant and slowly decreases past this point. Since this increase wasn’t significant, this could indicate that none of these features are useful, which is explained by the highest accuracy being the default rate. However, if features are needed, which the code looks for, the best feature set is {1,2,3,4,5,6,7,9,11,12,13,14,15}. 
 
 # **Small Dataset Conclusion:**
 
