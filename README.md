@@ -38,20 +38,27 @@ This project utilized one algorithm, Nearest Neighbor Classification and two dif
 
 For Nearest Neighbor Classification in a visual sense, the data is separated into regions so that no regions contain two different classes of data. Here, lines are more expressive and no longer need to be straight lines, as seen in Figure 1 [2]:
 
-
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure1.png?raw=true)
                
 This algorithm uses Euclidean Distance on feature data to determine an unknown instance’s nearest neighbor and classifies the instance with the same class type as the nearest neighbor. Then, we compare the classified class type to the actual class and see how many classifications were correctly classified, and then we divide by the number of instances in our dataset (K-fold Cross Validation) to measure accuracy, where K is the number of rows in the dataset. But, we know that “The nearest neighbor algorithm is sensitive to irrelevant features…” [3], so we use the searches to find the features that maximize accuracy.
+
+[2] 6__MachineLearning001 (Eammon Keogh, 2026, UCR, Slides/Dropbox Pg.66)
+
+[3] 6__MachineLearning001 (Eammon Keogh, 2026, UCR, Slides/Dropbox Pg. 74)
 
 # **Small Dataset:**
 
 In Figure 2, we see the results of running Forward Selection on CS170_Small_DataSet__51.txt, the dataset assigned to me:
 
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure2.png?raw=true)
 
 Before beginning to search, we first start with no features, also denoted by {}, whose accuracy is calculated by using the default rate, “the size of the most common class, over the size of the full dataset” [4], which in this case, is 85.8%. Some conclusions that can be made from the graph are that adding {8} mostly maintained the accuracy with 85.4%, but when adding {13}, it caused the accuracy to increase to 95.8%. After this, the chart continues a gradual decline of accuracy, meaning no further features were useful, which ends with an accuracy of 77.2%. Hence, features {8} and {13} are the best. 
 
+[4] 7__MachineLearning002 (Eammon Keogh, 2026, UCR, Slides/Dropbox Pg.4)
 
 In Figure 3, we see the results of running Backward Elimination on CS170_Small_DataSet__51.txt, the dataset assigned to me:
-
+ 
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure3.png?raw=true)
 
 Before beginning to search, we first start with all features, whose accuracy is the same as that of Forward Selection, 77.2%. As we begin removing features one by one, we can see that removing 3 features (4th bar) reaches the highest accuracy, ignoring no features ({}), but the increase isn’t significant and slowly decreases past this point. Since this increase wasn’t significant, this could indicate that none of these features are useful, which is explained by the highest accuracy being the default rate. However, if features are needed, which the code does, the best feature set is {1,2,3,4,5,6,7,9,11,12,13,14,15}. 
 
@@ -63,16 +70,15 @@ After looking at both Forward Selection and Backward Elimination, I believe that
 
 In Figure 4, we see the results of Forward Selection on CS170_Large_DataSet__27.txt, the dataset assigned to me: 
 
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure4.png?raw=true)
 
 Similar to the small dataset, we begin with no features, denoted by {}, whose accuracy is still calculated using the default rate equation, which is 82%. Starting Forward Selection search, adding feature {42} helped increase the accuracy to 83.97% and adding feature {40} leads to an even bigger increase with an accuracy of 97.2%. However, past this point, we steadily decline in accuracy, ending with an accuracy of 67.1%, leading to no additional useful features. Therefore, the only useful features are {40} and {42}. 
 
-
 In Figure 5, we see the results of Backward Elimination on CS170_Large_DataSet__27.txt, the dataset assigned to me: 
 
-
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Figure5.png?raw=true)
 
 Similar to the small dataset, we begin with all features, whose accuracy starts at 67.1%, the same accuracy seen in Forward Selection. As we remove features one by one, we can see that accuracy slowly increases for the majority of features removed, typically implying non-important features. However, near the end, we can see that feature {42} showed the biggest increase in accuracy from 83.83% to 89.93% compared to the rest. At the end, with no features, we get an accuracy decrease to 82%, same as the one seen in Forward Selection, meaning that the best feature from this search is {42}.
-
 
 # **Large Dataset Conclusion:**
 
@@ -82,10 +88,9 @@ After looking at both Forward Selection and Backward Elimination, I believe that
 
 Of course, accuracy is the most important factor when choosing which algorithm to use, but runtime can also be a big factor, especially if you can get the same, if not better, accuracy in a shorter amount of time. Below in Table 1, we can see how runtime differs not only between the different searches but also between the datasets, with increasing instances and features.
 
-
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Table1.png?raw=true)
 
 Based on this data, we can see that not surprisingly, the small dataset ran faster than the large dataset, given its smaller number of features (16 compared to 64) and instances (500 compared to 3000). Additionally, we can see that Forward Selection was not only better in terms of accuracy, but also in terms of runtime, doing roughly 1.62 and 1.86 times better than Backward Elimination. Which could be caused by Forward Selection searching for all features with smaller feature subsets compared to Backward Elimination. 
-
 
 # **Conclusion:**
 
@@ -99,6 +104,8 @@ The next two pages contain examples of the output of running Small Dataset Backw
 
 This is the example and output of Small Dataset Forward Selection:
 
-
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Example1.png?raw=true)
 
 This is the example and output of Small Dataset Backward Elimination:
+
+ ![alt text](https://github.com/eriktorres43/CS170-Project-2/blob/Pictures/Example2.png?raw=true)
