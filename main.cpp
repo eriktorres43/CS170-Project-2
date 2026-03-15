@@ -10,7 +10,7 @@ void feature_search(vector<vector<double>>& data, vector<int>& current_set_of_fe
 bool isempty(vector<int>& current_set_of_features, int j);
 
 int main() {
-    ifstream inFS; // Used to get the data in the given data files
+    ifstream inFS, inFS_Column_Size; // Used to get the data in the given data files
     vector<vector<double>> data; // Used to hold the values in the data files
     vector<double> values;
     vector<int> current_set;
@@ -22,10 +22,11 @@ int main() {
     cout << "Choose one of the following options: " << endl;
     cout << "1: If you want the Small DataSet." << endl;
     cout << "2: If you want the Large DataSet." << endl;
+    cout << "3: If you want to insert another text-file." << endl;
 
     cin >> choice;
 
-    while(choice != 1 && choice != 2) {
+    while(choice != 1 && choice != 2 && choice != 3) {
         cin.ignore();
         cout << "Not a valid input, try again." << endl;
         cin >> choice;
@@ -36,19 +37,36 @@ int main() {
 
     if(choice == 1) { 
         data_option = "CS170_Small_DataSet__51.txt";
-        column_size = 17;
     } else if (choice == 2) {
         data_option = "CS170_Large_DataSet__27.txt";
-        column_size = 65;
+    } else {
+        cout << "Type the file name below:" << endl;
+        cin >> data_option;
     }
 
     inFS.open(data_option);
+    inFS_Column_Size.open(data_option);
 
     if(!inFS.is_open()) {
         cout << data_option << " could not be opened." << endl;
         return 0;
     }
 
+    // This is used to determine how many columns there are to separate the instances per row
+
+    string line;
+    int count = 0;
+
+    getline(inFS_Column_Size, line);
+
+    for(int i = 0; i < line.length(); ++i) { 
+        if(line.at(i) == 'e') { // we can use e here since each IEEE contains an e per column
+            ++count;
+        }
+    }
+
+    column_size = count;
+    
     cout << "Choose one of the following options: " << endl;
     cout << "1: If you want Forward Selection." << endl;
     cout << "2: If you want Backward Elimination." << endl;
