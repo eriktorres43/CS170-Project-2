@@ -30,6 +30,7 @@ Date: March 16, 2026
 # **Introduction:**
 
 Feature Selection with Nearest Neighbor Classification is a project where we classify data using Nearest Neighbor Selection, in our given datasets, which I have done in C++. Then, we use Forward Selection or Backward Elimination search to determine which provides the best time and accuracy. This project, although isolated to two datasets, can be applied generally in the industry to help save time, memory, and money. 
+
 This project utilized one algorithm, Nearest Neighbor Classification and two different searches, Forward Selection, which adds one feature at a time and Backward Elimination, which removes one feature at a time, to help determine the best features that provide the highest accuracy. Some things to keep in mind are, “You will almost certainly find that forward and backward search give different answers” [1], as well as “Forward search tends to be better on almost all problems” [1].
 
 [1] P2_hints (Eammon Keogh, 2026, UCR, Slides/Dropbox Pg. 1)
@@ -55,6 +56,7 @@ In Figure 2, we see the results of running Forward Selection on CS170_Small_Data
 Before beginning to search, we first start with no features, also denoted by {}, whose accuracy is calculated by using the default rate, “the size of the most common class, over the size of the full dataset” [4], which in this case, is 85.8%. Some conclusions that can be made from the graph are that adding {8} mostly maintained the accuracy with 85.4%, but when adding {13}, it caused the accuracy to increase to 95.8%. After this, the chart continues a gradual decline of accuracy, meaning no further features were useful, which ends with an accuracy of 77.2%. Hence, features {8} and {13} are the best. 
 
 [4] 7__MachineLearning002 (Eammon Keogh, 2026, UCR, Slides/Dropbox Pg.4)
+
 
 In Figure 3, we see the results of running Backward Elimination on CS170_Small_DataSet__51.txt, the dataset assigned to me:
  
