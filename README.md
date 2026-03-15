@@ -1,4 +1,4 @@
-# CS170-Project-2
+# CS170 Project 2: Feature Selection with Nearest Neighbor
 
 Erik Torres
 
@@ -38,7 +38,7 @@ This project utilized one algorithm, Nearest Neighbor Classification and two dif
 
 For Nearest Neighbor Classification in a visual sense, the data is separated into regions so that no regions contain two different classes of data. Here, lines are more expressive and no longer need to be straight lines, as seen in Figure 1 [2]:
 
-                       
+
                
 This algorithm uses Euclidean Distance on feature data to determine an unknown instance’s nearest neighbor and classifies the instance with the same class type as the nearest neighbor. Then, we compare the classified class type to the actual class and see how many classifications were correctly classified, and then we divide by the number of instances in our dataset (K-fold Cross Validation) to measure accuracy, where K is the number of rows in the dataset. But, we know that “The nearest neighbor algorithm is sensitive to irrelevant features…” [3], so we use the searches to find the features that maximize accuracy.
 
@@ -98,6 +98,7 @@ Therefore, when attempting to solve this problem again, whether that be for this
 The next two pages contain examples of the output of running Small Dataset Backward Elimination and Large Dataset Forward Selection.
 
 This is the example and output of Small Dataset Forward Selection:
+
 
 
 This is the example and output of Small Dataset Backward Elimination:
